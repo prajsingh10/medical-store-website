@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Store - Your Trusted Pharmacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3f88c5;
+            --secondary: #44bba4;
+            --accent: #fe5f55;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2779686e-b0d5-4eab-aeba-c4afdf706503.png') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .medicine-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .medicine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 px-6 fixed w-full top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/51f98133-3520-4037-ac3c-5008c2e16bb1.png" alt="MediCare store Logo - green cross with white background" class="h-10 w-10">
+                <span class="text-xl font-bold text-blue-700">MediCare</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-700 hover:text-blue-700 font-medium">Home</a>
+                <a href="#products" class="text-gray-700 hover:text-blue-700 font-medium">Products</a>
+                <a href="#categories" class="text-gray-700 hover:text-blue-700 font-medium">Categories</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-700 font-medium">About Us</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-700 font-medium">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search medicines..." class="border border-gray-300 rounded-full py-1 px-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-700">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <div class="relative">
+                    <button id="cartBtn" class="text-gray-700 hover:text-blue-700">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+                
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="max-w-2xl">
+                <h1 class="hero-title text-4xl md:text-5xl font-bold mb-4">Your Health, Our Priority</h1>
+                <p class="text-lg mb-8">Discover high-quality medicines and healthcare products at affordable prices. Fast delivery and professional advice from our certified pharmacists.</p>
+                <div class="flex flex-wrap gap-3">
+                    <button class="bg-white text-blue-700 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition">Shop Now</button>
+                    <button class="bg-transparent border-2 border-white text-white font-bold py-2 px-6 rounded-full hover:bg-white hover:text-blue-700 transition">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center">
+      
+      
+      <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+        <img 
+          src="https://uploads.onecompiler.io/43s8st5h2/43sqhnxbe/its%20mmeeee.png" 
+          alt="Pharmacist arranging medicines in the store" 
+          class="rounded-lg shadow-xl w-full max-h-[1120px] object-cover mx-auto"
+        >
+      </div>
+      
+      
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold text-emerald-900 mb-6">About Our Medical Store</h2>
+        <p class="text-gray-700 mb-4">
+          Established in 2010, HealthPlus Pharmacy has proudly served the community with a commitment to providing high-quality, genuine medicines and healthcare products at affordable prices. With over a decade of trusted service, we have built lasting relationships with customers who rely on us for their everyday health needs. Our store offers a wide range of prescription drugs, wellness supplements, and personal care essentials from reputed brands
+        </p>
+        <p class="text-gray-700 mb-6">
+          Our qualified pharmacists are always ready to guide you with the right information and care, 
+          ensuring your well-being is our top priority.
+        </p>
+        <div class="flex items-center">
+          <div class="bg-emerald-100 p-3 rounded-full mr-4">
+            <i class="fas fa-heartbeat text-emerald-700 text-2xl"></i>
+          </div>
+          <span class="text-gray-800">Trusted healthcare solutions</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+    <!-- Featured Categories -->
+    <section id="categories" class="py-16 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Shop by Category</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our wide range of medical products categorized for your convenience</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="category-card bg-white p-6 rounded-lg shadow-md transition duration-300 cursor-pointer border border-gray-100">
+                    <div class="h-24 w-24 mx-auto mb-4 flex items-center justify-center bg-blue-50 rounded-full">
+                        <i class="fas fa-pills text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-center font-semibold text-gray-800 mb-2">Prescription Medicines</h3>
+                    <p class="text-center text-sm text-gray-600">300+ products</p>
+                </div>
+                
+                <div class="category-card bg-white p-6 rounded-lg shadow-md transition duration-300 cursor-pointer border border-gray-100">
+                    <div class="h-24 w-24 mx-auto mb-4 flex items-center justify-center bg-green-50 rounded-full">
+                        <i class="fas fa-heart text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-center font-semibold text-gray-800 mb-2">Wellness Products</h3>
+                    <p class="text-center text-sm text-gray-600">450+ products</p>
+                </div>
+                
+                <div class="category-card bg-white p-6 rounded-lg shadow-md transition duration-300 cursor-pointer border border-gray-100">
+                    <div class="h-24 w-24 mx-auto mb-4 flex items-center justify-center bg-yellow-50 rounded-full">
+                        <i class="fas fa-baby text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-center font-semibold text-gray-800 mb-2">Mother & Baby Care</h3>
+                    <p class="text-center text-sm text-gray-600">200+ products</p>
+                </div>
+                
+                <div class="category-card bg-white p-6 rounded-lg shadow-md transition duration-300 cursor-pointer border border-gray-100">
+                    <div class="h-24 w-24 mx-auto mb-4 flex items-center justify-center bg-red-50 rounded-full">
+                        <i class="fas fa-heartbeat text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-center font-semibold text-gray-800 mb-2">Medical Devices</h3>
+                    <p class="text-center text-sm text-gray-600">180+ products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section id="products" class="py-16 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">Popular Medicines</h2>
+                    <p class="text-gray-600">Quality medicines for your health needs</p>
+                </div>
+                <button class="text-blue-700 font-medium hover:underline">View All</button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="medicine-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a0ec85f5-92a9-41b4-8e8f-eab187c99703.png" alt="Bright red medicine box of Crocin pain relief tablets with close-up of tablets" class="w-full h-48 object-contain p-4 bg-gray-50">
+                        <div class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-1">Crocin Advance 650mg</h3>
+                        <p class="text-sm text-gray-600 mb-3">Pain Relief Tablet (Strip of 10)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">₹45.00</span>
+                            <span class="text-xs text-gray-500 line-through">₹52.00</span>
+                        </div>
+                        <button class="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition" onclick="addToCart(1, 'Crocin Advance 650mg', 45)">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="medicine-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9fff83e3-194a-4d69-b483-15e12df7bb6c.png" alt="Blue and white bottle of Benadryl cough syrup with measuring cup beside it" class="w-full h-48 object-contain p-4 bg-gray-50">
+                        <div class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-1">Benadryl Syrup</h3>
+                        <p class="text-sm text-gray-600 mb-3">Cough Syrup (100ml)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">₹125.00</span>
+                            <span class="text-xs text-gray-500 line-through">₹140.00</span>
+                        </div>
+                        <button class="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition" onclick="addToCart(2, 'Benadryl Syrup', 125)">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="medicine-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7e46799d-50bf-40da-aa7b-194f6f8fb252.png" alt="Small transparent vial of insulin injection with syringe and packaging" class="w-full h-48 object-contain p-4 bg-gray-50">
+                        <div class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">Limited Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-1">Human Insulin Injection</h3>
+                        <p class="text-sm text-gray-600 mb-3">100 IU/ml (10ml)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">₹495.00</span>
+                            <span class="text-xs text-gray-500 line-through">₹520.00</span>
+                        </div>
+                        <button class="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition" onclick="addToCart(3, 'Human Insulin Injection', 495)">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="medicine-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a7741f70-b1e0-4833-9cb1-692fc93c457b.png" alt="Blue and white tube of Volini pain relief gel with opened cap showing gel" class="w-full h-48 object-contain p-4 bg-gray-50">
+                        <div class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-1">Volini Pain Relief Gel</h3>
+                        <p class="text-sm text-gray-600 mb-3">30g Tube</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">₹85.00</span>
+                            <span class="text-xs text-gray-500 line-through">₹95.00</span>
+                        </div>
+                        <button class="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition" onclick="addToCart(4, 'Volini Pain Relief Gel', 85)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- verification about medicine -->
+    <section id="about" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Block 1 -->
+    <div class="flex flex-col md:flex-row items-center">
+      
+      
+      <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+        <img
+          src="https://uploads.onecompiler.io/43s8st5h2/43sqhnxbe/i-heard-so-much-about-this-product.webp"
+          alt="Customer checking a medicine bottle at medical store"
+          class="rounded-lg shadow-xl w-full"
+        />
+      </div>
+
+      
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold text-green-800 mb-6">About Our Medical Store</h2>
+        <p class="text-gray-700 mb-4">
+          Our medical store has been a trusted source for authentic, affordable, and quality healthcare products. For over a decade, we have proudly served individuals and families with a wide range of prescription medicines, wellness supplements, personal care items, and over-the-counter products.
+
+We believe that healthcare begins with trust and guidance.
+
+
+        </p>
+        <p class="text-gray-700 mb-6">
+          Our trained pharmacists are available to guide you with prescriptions, wellness tips, 
+          and over-the-counter medicines — ensuring you and your family stay healthy.
+        </p>
+        <div class="flex items-center">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="fas fa-heartbeat text-green-700 text-2xl"></i>
+          </div>
+          <span class="text-gray-800">Reliable care & genuine medicines</span>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Block 2 -->
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+        <img
+          src="https://uploads.onecompiler.io/43s8st5h2/43sqhnxbe/medicalsslss.jpg"
+          alt="Customer checking medicine bottle"
+          class="rounded-lg shadow-xl w-full"
+        />
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold text-green-800 mb-6">Trusted Since 2010 </h2>
+        <p class="text-gray-700 mb-4">
+          Trusted Since 2010, we have earned the confidence of thousands of families by consistently providing certified medicines, wellness products, and personal care essentials. Our commitment to quality, safety, and affordability has made us a reliable name in the healthcare community. Every product we offer is sourced from trusted pharmaceutical brands and handled with strict quality control. Our trained and compassionate team is always ready to assist you with prescription guidance, health queries, and product recommendations.
+        </p>
+        <p class="text-gray-700 mb-6">
+          Our trained team ensures you always receive safe and genuine healthcare support.
+        </p>
+        <div class="flex items-center">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="fas fa-capsules text-green-700 text-2xl"></i>
+          </div>
+          <span class="text-gray-800">100% genuine medicines</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="flex flex-col-reverse md:flex-row items-center">
+      <div class="md:w-1/2 mt-8 md:mt-0 md:pr-8">
+        <img
+          src="https://uploads.onecompiler.io/43s8st5h2/43sqhnxbe/pharmacy.jpeg"
+          alt="Pharmacist assisting customer"
+          class="rounded-lg shadow-xl w-full"
+        />
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold text-green-800 mb-6">Personalized Support</h2>
+        <p class="text-gray-700 mb-4">
+          At our pharmacy, we believe that every customer deserves individual attention. Our expert pharmacists take the time to help you understand your prescriptions, explain how and when to take your medication, and provide clear guidance on over-the-counter (OTC) medicines. Whether you have questions about side effects or general wellness, our team is here to offer trusted advice and ensure your health remains our top priority.
+        </p>
+        <p class="text-gray-700 mb-6">
+          Friendly support makes your visit smoother and safer.
+        </p>
+        <div class="flex items-center">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="fas fa-user-nurse text-green-700 text-2xl"></i>
+          </div>
+          <span class="text-gray-800">Expert pharmacist help</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+        <img
+          src="https://uploads.onecompiler.io/43s8st5h2/43sqhnxbe/medical%20pay.jpg"
+          alt="Fully stocked shelves"
+          class="rounded-lg shadow-xl w-full"
+        />
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold text-green-800 mb-6">Everything You Need</h2>
+        <p class="text-gray-700 mb-4">
+          Our pharmacy is your one-stop destination for a complete range of healthcare essentials. We stock everything from prescription medicines and wellness supplements to daily-use products tailored for all age groups. Whether it's baby care items, women’s hygiene products, or elder care supplies, we ensure our shelves are always well-stocked with trusted brands. With a focus on quality and convenience, we aim to meet the everyday health needs of your entire family under one roof.
+        </p>
+        <p class="text-gray-700 mb-6">
+          Top brands, fair prices, and full stock — always ready for your needs.
+        </p>
+        <div class="flex items-center">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="fas fa-store text-green-700 text-2xl"></i>
+          </div>
+          <span class="text-gray-800">One-stop medical solution</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Offers Banner -->
+    <section class="py-12 px-6 ">
+        <div class="max-w-6xl mx-auto bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 p-8 md:p-12 text-white">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3">Flat 20% Off</h2>
+                    <h3 class="text-xl mb-4">On All Diabetes Care Products</h3>
+                    <p class="mb-6">Use code <span class="font-bold">DIABETES20</span> at checkout to claim your discount. Offer valid till 31st December.</p>
+                    <button class="bg-white text-blue-700 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition">Shop Diabetes Care</button>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/420ed441-9da7-4b28-885f-d122b36ecff2.png" alt="Promotional banner showing diabetes care products with 20% discount offer tag" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Why Choose Us -->
+    <section id="about" class="py-16 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Why Choose MediCare?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We're committed to bringing you the best pharmacy experience</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center px-4">
+                    <div class="mx-auto h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Authentic Products</h3>
+                    <p class="text-gray-600">100% genuine medicines sourced directly from manufacturers and authorized dealers.</p>
+                </div>
+                
+                <div class="text-center px-4">
+                    <div class="mx-auto h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-truck text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600">Express delivery in 2-3 hours across city. Free delivery on orders above ₹499.</p>
+                </div>
+                
+                <div class="text-center px-4">
+                    <div class="mx-auto h-16 w-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-headset text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Expert Support</h3>
+                    <p class="text-gray-600">24/7 chat and call support from qualified pharmacists for your healthcare queries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Thousands of satisfied customers trust us for their medical needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://uploads.onecompiler.io/43s8st5h2/43sqhnxbe/indian-hindu-girl-traditional-violet-saree-posed-street-against-wooden-terrace_627829-2046.webp" alt="Portrait of happy middle-aged woman customer smiling at camera" class="h-12 w-12 rounded-full mr-3 border-2 border-blue-100">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Mrs. Sharma</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"I've been getting my father's diabetes medicines from MediCare for the past year. Never had any delays or issues with quality. The pharmacist even calls to check if we need refills."</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://uploads.onecompiler.io/43s8st5h2/43sqhnxbe/IMG_7589.jpg" alt="Portrait of elderly gentleman with glasses looking pleased" class="h-12 w-12 rounded-full mr-3 border-2 border-blue-100">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Mr. Mishra</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">" The delivery person maintained all safety protocols. Very professional service!"</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://uploads.onecompiler.io/43s8st5h2/43sqhnxbe/indian-girls-portrait-ai-art-v0-us5gr2sibvsa1.webp" alt="Portrait of young mother holding baby and smiling" class="h-12 w-12 rounded-full mr-3 border-2 border-blue-100">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Mrs. Swati</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Their baby care products collection is amazing and reasonably priced. I appreciate the free parenting tips they share along with the orders. Saved me many trips to the pharmacy."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 bg-gradient-to-b from-blue-50 to-white p-8 rounded-lg">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h2>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Our Address</h4>
+                                <p class="text-gray-600">HealthCare Plaza, 25th Main, Sector 56, Bangalore - 560068</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Phone Numbers</h4>
+                                <p class="text-gray-600">+91 9876543210 (Customer Care)<br>+91 9876543210 (Pharmacy)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Email Address</h4>
+                                <p class="text-gray-600">care@medicare.com<br>pharmacy@medicare.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="font-semibold text-gray-800 mb-3">Working Hours</h3>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex justify-between py-2 border-b border-gray-100">
+                            <span class="text-gray-700">Monday - Friday</span>
+                            <span class="text-gray-700 font-medium">8:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-100">
+                            <span class="text-gray-700">Saturday</span>
+                            <span class="text-gray-700 font-medium">9:00 AM - 9:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span class="text-gray-700">Sunday</span>
+                            <span class="text-gray-700 font-medium">9:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-1">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bc25f9c1-1590-4a24-b21f-6a3735ebf7f0.png" alt="MediCare store Logo - white cross with blue background" class="h-8 w-8">
+                        <span class="text-xl font-bold">MediCare</span>
+                    </div>
+                    <p class="text-gray-400">Your trusted pharmacy for authentic medicines and healthcare products. Fast delivery, certified pharmacists, and competitive prices.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Prescription Medicines</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">OTC Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Baby Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Medical Devices</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Wellness</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest healthcare tips and offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-2">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="h-10 w-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2010 MediCare Pharmacy. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Refund Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="toggleCart()"></div>
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-xl transition-all duration-300">
+            <div class="h-full flex flex-col">
+                <div class="p-6 border-b border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-gray-800">Shopping Cart</h3>
+                        <button onclick="toggleCart()" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex-1 overflow-y-auto p-6">
+                    <div id="cartItems" class="space-y-6">
+                        <!-- Cart items will be displayed here -->
+                        <div class="text-center py-10">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/18999768-b8f9-4cce-9619-67a3d9fd0d81.png" alt="Illustration of empty shopping cart with question mark hovering above" class="mx-auto mb-4 h-40 w-40">
+                            <h4 class="text-lg font-medium text-gray-800 mb-2">Your cart is empty</h4>
+                            <p class="text-gray-600 mb-4">Looks like you haven't added anything to your cart yet</p>
+                            <button onclick="toggleCart()" class="bg-blue-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-blue-700 transition">Continue Shopping</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 border-t border-gray-200 bg-gray-50">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-600">Subtotal</span>
+                        <span id="cartSubtotal" class="font-medium">₹0.00</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span class="text-gray-600">Delivery Charges</span>
+                        <span id="deliveryCharges" class="font-medium">₹40.00</span>
+                    </div>
+                    <div class="flex justify-between text-lg font-bold mb-6">
+                        <span>Total</span>
+                        <span id="cartTotal">₹40.00</span>
+                    </div>
+                    <button id="checkoutBtn" class="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Shopping Cart Functionality
+        let cart = [];
+        
+        // Toggle cart visibility
+        function toggleCart() {
+            const cartModal = document.getElementById('cartModal');
+            cartModal.classList.toggle('hidden');
+            updateCartDisplay();
+        }
+        
+        // Add item to cart
+        function addToCart(id, name, price, quantity = 1) {
+            // Check if item already exists in cart
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id,
+                    name,
+                    price,
+                    quantity
+                });
+            }
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show success notification
+            showNotification(`${name} added to cart`);
+        }
+        
+        // Update cart item quantity
+        function updateCartItem(id, newQuantity) {
+            if (newQuantity < 1) {
+                removeFromCart(id);
+                return;
+            }
+            
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity = newQuantity;
+            }
+            
+            updateCartDisplay(true);
+        }
+        
+        // Remove item from cart
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartDisplay(true);
+        }
+        
+        // Update cart counter in header
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+        
+        // Update cart modal display
+        function updateCartDisplay(skipNotification = false) {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartSubtotal = document.getElementById('cartSubtotal');
+            const cartTotal = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center py-10">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dbda3b6d-8ee8-40d7-9f0b-f8c0ef037962.png" alt="Illustration of empty shopping cart with question mark hovering above" class="mx-auto mb-4 h-40 w-40">
+                        <h4 class="text-lg font-medium text-gray-800 mb-2">Your cart is empty</h4>
+                        <p class="text-gray-600 mb-4">Looks like you haven't added anything to your cart yet</p>
+                        <button onclick="toggleCart()" class="bg-blue-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-blue-700 transition">Continue Shopping</button>
+                    </div>
+                `;
+                cartSubtotal.textContent = '₹0.00';
+                cartTotal.textContent = '₹40.00';
+                checkoutBtn.disabled = true;
+            } else {
+                // Calculate subtotal
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                const delivery = subtotal >= 499 ? 0 : 40;
+                const total = subtotal + delivery;
+                
+                // Render cart items
+                cartItemsContainer.innerHTML = cart.map(item => `
+                    <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                        <div class="flex space-x-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da809049-af77-4ced-8c92-93a83703c0ca.png" alt="${item.name} product thumbnail" class="h-20 w-20 object-contain rounded bg-gray-100">
+                            <div>
+                                <h4 class="font-medium text-gray-800">${item.name}</h4>
+                                <p class="text-gray-600 text-sm">MRP: ₹${item.price}</p>
+                                <button onclick="removeFromCart(${item.id})" class="text-red-500 text-sm hover:text-red-700 mt-1">Remove</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                            <button onclick="updateCartItem(${item.id}, ${item.quantity - 1})" class="quantity-btn bg-gray-100 text-gray-600 hover:bg-gray-200">&minus;</button>
+                            <span class="px-3 text-gray-800">${item.quantity}</span>
+                            <button onclick="updateCartItem(${item.id}, ${item.quantity + 1})" class="quantity-btn bg-gray-100 text-gray-600 hover:bg-gray-200">&plus;</button>
+                        </div>
+                        <div class="font-medium text-gray-900">₹${(item.price * item.quantity).toFixed(2)}</div>
+                    </div>
+                `).join('');
+                
+                // Update totals
+                cartSubtotal.textContent = `₹${subtotal.toFixed(2)}`;
+                document.getElementById('deliveryCharges').textContent = `₹${delivery.toFixed(2)}`;
+                cartTotal.textContent = `₹${total.toFixed(2)}`;
+                checkoutBtn.disabled = false;
+                
+                if (!skipNotification) {
+                    showNotification('Cart updated');
+                }
+            }
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 right-4 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center transition-all duration-300 transform translate-y-10 opacity-0 animate-notification';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle mr-2"></i>
+                ${message}
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Trigger animation
+            setTimeout(() => {
+                notification.classList.add('translate-y-0');
+                notification.classList.add('opacity-100');
+            }, 10);
+            
+            // Remove notification
+            setTimeout(() => {
+                notification.classList.remove('translate-y-0');
+                notification.classList.remove('opacity-100');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+        
+        // Add animation style
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes notificationAnimation {
+                0% { transform: translateY(10px); opacity: 0; }
+                10% { transform: translateY(0); opacity: 1; }
+                90% { transform: translateY(0); opacity: 1; }
+                100% { transform: translateY(10px); opacity: 0; }
+            }
+            .animate-notification {
+                animation: notificationAnimation 3s ease forwards;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize cart count
+        updateCartCount();
+    </script>
+</body>
+</html>
